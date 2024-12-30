@@ -17,6 +17,6 @@ public class Main {
     @KafkaListener(id = "SpringConsumer", topics = "character-events")
     public void listen(String message) {
         log.info(message);
-        //TODO: сделать десериализацию
+
     }
 }
