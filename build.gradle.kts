@@ -37,6 +37,7 @@ configurations {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-websocket")
+    implementation("org.springframework.kafka:spring-kafka")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
@@ -46,10 +47,9 @@ dependencies {
     implementation("org.webjars:stomp-websocket:2.3.4")
     implementation("org.webjars:bootstrap:5.2.3")
 
-    implementation("org.apache.kafka:kafka-clients:3.9.0")
-//    implementation("ch.qos.logback:logback-classic")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.18.2")
 
+    testImplementation("org.springframework.kafka:spring-kafka-test")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
