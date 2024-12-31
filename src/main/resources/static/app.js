@@ -4,15 +4,15 @@ const topicName = '/topic/message';
 
 
 
-const setConnected = (connected) => {
+const setConnected = () => {
     let successDot = document.getElementById('success-connection');
     successDot.removeAttribute('hidden');
 }
 
 const connect = () => {
     stompClient = Stomp.over(new SockJS('/ws'));
-    stompClient.connect({}, (frame) => {
-        setConnected(true);
+    stompClient.connect({}, () => {
+        setConnected();
         stompClient.subscribe(topicName, (message) => showMessage(JSON.parse(message.body) ));
     });
 }

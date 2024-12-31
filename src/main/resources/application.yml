@@ -4,3 +4,4 @@ spring:
   kafka:
     consumer:
       auto-offset-reset: earliest
+      bootstrap-servers: broker:29092
